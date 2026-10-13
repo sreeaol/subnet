@@ -45,6 +45,11 @@ pipeline {
             }
         }
     }
+stage('Apply') {
+    steps {
+        sh 'terraform apply -auto-approve tfplan'
+    }
+}
 
     post {
         always {
